@@ -1,0 +1,30 @@
+{% extends "layout.jinja2" %}
+
+{% block pagestyles %}
+  {% assets "home_less_bundle" %}
+    <link href="{{ ASSET_URL }}" rel="stylesheet" type="text/css">
+  {% endassets %}
+{% endblock %}
+
+{% block content %}
+  {% include "navigation.jinja2" %}
+
+  <div class="container">
+    <h1>{{ title }}</h1>
+    <h2>{{ subtitle }}</h2>
+    <div class="resource-links">
+    </div>
+
+    <div class="employees">
+      {% for employee in employees %}
+        <a href="/products/{{ employee.id }}/" class="product-preview">
+          <div class="name">{{ employee.name }}</div>
+          <div class="email">{{ employee.email }}</div>
+          <div class="type">{{ employee.salary_type }}</div>
+          <div class="salary">${{ employee.salary }}</div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+
+{% endblock %}
