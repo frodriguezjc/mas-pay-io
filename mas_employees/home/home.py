@@ -21,7 +21,7 @@ def home():
         title="Welcome to pay-mas.io",
         subtitle="List Existing users.",
         template="home-template",
-        mployees=employees
+        employees=employees
     )
 
 @home_bp.route("/employees", methods=["GET"])

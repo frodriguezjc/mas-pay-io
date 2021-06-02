@@ -24,6 +24,7 @@ def init_app():
         from .assets import compile_static_assets
         from .home import home
         from .products import products
+        from .employees import employees
         from .profile import profile
         
         #Get models to be used by SqlAlchemy
@@ -35,6 +36,7 @@ def init_app():
         app.register_blueprint(profile.profile_bp)
         app.register_blueprint(home.home_bp)
         app.register_blueprint(products.product_bp)
+        app.register_blueprint(employees.employee_bp)
 
         # Compile static assets
         compile_static_assets(assets)

@@ -31,6 +31,7 @@ def compile_static_assets(assets):
         output="dist/css/products.css",
         extra={"rel": "stylesheet/less"},
     )
+   
     assets.register("common_less_bundle", common_less_bundle)
     assets.register("home_less_bundle", home_less_bundle)
     assets.register("profile_less_bundle", profile_less_bundle)

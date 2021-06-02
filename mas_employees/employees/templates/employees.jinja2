@@ -10,20 +10,26 @@
   {% include "navigation.jinja2" %}
 
   <div class="container">
-    <h1 class="product-name">{{ product.name }}</h1>
+    <h1 class="product-name">{{ employee.name }}</h1>
     <div class="product-flex">
-      <img class="product-image" src="{{ product.image }}" alt="profile">
+      <img class="product-image" src="https://picsum.photos/200/300" alt="profile">
       <div class="product-details">
-        <div class="product-price meta"><span class="meta-name">Price:</span> <span>${{ product.salePrice }}</span></div>
-        <div class="product-review-average meta"><span class="meta-name">Rating:</span> <span>{{ product.customerReviewAverage }}/5</span></div>
-        <div class="product-review-count meta"><span class="meta-name"># Reviews:</span> <span>{{ product.customerReviewCount }}</span></div>
-        <div class="product-sku meta"><span class="meta-name">SKU:</span> {{ product.sku }}</div>
-        <p>{{ product.longDescription }}</p>
-        <button>BUY NOW!!!!</button>
+        <div class="product-price meta"><span class="meta-name">Salary:</span> <span>${{ employee.salary }}</span></div>
+         <span>{{ employee.salary_type }}</span>
+        <div class="product-review-average meta"><span class="meta-name">Name:</span> <span>{{ employee.name }}</span></div>
+        <div class="product-review-count meta"><span class="meta-name">Email:</span> <span>{{ employee.email }}</span></div>
+        {% if employee.salary_type == "Monthly" %}
+            <div class="product-review-count meta"><span class="meta-name">Annual:</span> ${{ employee.salary * 12 }}</div>
+            {% elif employee.salary_type == "Hourly" %}
+            <div class="product-review-count meta"><span class="meta-name">Annual:</span> ${{ employee.salary * 120 * 12 }}</div>
+            {% else %}
+              <p>Employee does not have a Valid Salary !</p>
+          {% endif %}
+       
       </div>
     </div>
-  </div>
+  </div> 
 
- {% include "blueprintinfo.jinja2" %}
+
 
 {% endblock %}
