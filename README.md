@@ -1,7 +1,14 @@
 # MasPay-io
 
-Read Employees ala MasG.
+Read Employees ala MasG, Created with Flask, Blueprints, SQLAlchemy and love
+
+# Screenshots
+![Employee List](list.png)
+
+![Employee Detail](detail.png)
+
 # Getting Started
+
 
 Get set up locally in two steps:
 
